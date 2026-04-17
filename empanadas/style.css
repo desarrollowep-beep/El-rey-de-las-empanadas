@@ -1,0 +1,676 @@
+:root {
+    --primary: #e67e22;
+    --secondary: #c0392b;
+    --gold: #f1c40f;
+    --cream: #fff8f0;
+    --dark: #2c2c2c;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --radius: 18px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+section {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* HEADER */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(255, 248, 240, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--secondary);
+}
+
+.logo i {
+    color: var(--gold);
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-primary,
+.btn-whatsapp {
+    padding: 12px 22px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.cart-btn {
+    border: none;
+    background: white;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: var(--secondary);
+    color: white;
+    font-size: 12px;
+    padding: 3px 7px;
+    border-radius: 50%;
+}
+
+/* HERO */
+.hero {
+    min-height: 95vh;
+    background: url('images/hero-empanadas.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* MENU */
+.menu-grid,
+.combo-grid,
+.testimonial-grid,
+.gallery-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.food-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.food-card:hover {
+    transform: translateY(-8px);
+}
+
+.food-card img {
+    height: 240px;
+    object-fit: cover;
+}
+
+.food-info {
+    padding: 20px;
+}
+
+.food-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.food-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.food-bottom span {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--secondary);
+}
+
+.food-bottom button,
+.combo-card button {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 50px;
+    background: var(--primary);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.food-bottom button:hover,
+.combo-card button:hover {
+    background: var(--secondary);
+}
+
+/* COMBOS */
+.combo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.combo-card {
+    background: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.combo-card.featured {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    transform: scale(1.03);
+}
+
+.combo-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.combo-card span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 18px 0;
+}
+
+/* TESTIMONIOS */
+.testimonials {
+    background: white;
+}
+
+.testimonial-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.testimonial-card {
+    background: var(--cream);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.stars {
+    margin-top: 12px;
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+/* GALERIA */
+.gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.gallery-grid img {
+    height: 250px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.04);
+}
+
+/* CARRITO */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 400px;
+    max-width: 100%;
+    height: 100vh;
+    background: white;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+    z-index: 1000;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.active {
+    right: 0;
+}
+
+.cart-header,
+.cart-footer {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.full {
+    width: 100%;
+    justify-content: center;
+}
+
+#closeCart {
+    border: none;
+    background: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.8rem;
+    box-shadow: var(--shadow);
+    z-index: 999;
+}
+
+/* FOOTER */
+.footer {
+    background: #1f1f1f;
+    color: white;
+    padding-top: 80px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.footer h3,
+.footer h4 {
+    margin-bottom: 15px;
+}
+
+.footer a {
+    display: block;
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+.map iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    margin-top: 40px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    margin-top: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: -100%;
+        background: white;
+        flex-direction: column;
+        width: 260px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+        transition: 0.3s;
+    }
+
+    .nav-links.active {
+        right: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn-primary,
+    .btn-whatsapp {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cart-sidebar {
+        width: 100%;
+    }
+}
+.hero {
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 165, 0, 0.25), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(255, 99, 71, 0.25), transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(255, 215, 0, 0.2), transparent 40%),
+        url('images/empanadas1.png') center/cover no-repeat;
+}
+
+.floating-empanada {
+    position: absolute;
+    right: 6%;
+    top: 18%;
+    width: 420px;
+    z-index: 3;
+    animation: floatEmpanada 5s ease-in-out infinite;
+    filter: drop-shadow(0 25px 40px rgba(0,0,0,0.25));
+}
+
+.floating-empanada img {
+    width: 100%;
+    border-radius: 50%;
+    animation: rotateEmpanada 16s linear infinite;
+}
+
+.hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.55;
+    z-index: 1;
+    animation: pulseGlow 6s ease-in-out infinite;
+}
+
+.glow-1 {
+    width: 220px;
+    height: 220px;
+    background: #ff9f43;
+    top: 10%;
+    left: 8%;
+}
+
+.glow-2 {
+    width: 280px;
+    height: 280px;
+    background: #feca57;
+    bottom: 10%;
+    right: 10%;
+}
+
+.glow-3 {
+    width: 180px;
+    height: 180px;
+    background: #ff6b6b;
+    top: 45%;
+    left: 45%;
+}
+
+@keyframes floatEmpanada {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+@keyframes rotateEmpanada {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.45;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.65;
+    }
+}
+.hero-content {
+    position: relative;
+    z-index: 5;
+    color: white;
+    max-width: 700px;
+    padding: 30px;
+    backdrop-filter: blur(6px);
+    border-radius: 25px;
+}
+
+@keyframes fadeHero {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 992px) {
+    .floating-empanada {
+        width: 260px;
+        right: 4%;
+        top: 20%;
+        opacity: 0.9;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-empanada {
+        width: 180px;
+        right: 50%;
+        transform: translateX(50%);
+        top: 10%;
+    }
+
+    .hero-glow {
+        filter: blur(60px);
+    }
+}/* =========================
+   BACKGROUND WOW PREMIUM
+========================= */
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: 1;
+    opacity: 0.45;
+    animation: pulseBg 6s ease-in-out infinite;
+}
+
+.hero::before {
+    width: 320px;
+    height: 320px;
+    background: rgba(255, 166, 0, 0.5);
+    top: 10%;
+    left: 5%;
+}
+
+.hero::after {
+    width: 260px;
+    height: 260px;
+    background: rgba(255, 99, 71, 0.4);
+    bottom: 10%;
+    right: 5%;
+}
+
+@keyframes pulseBg {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.35;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 0.6;
+    }
+}
